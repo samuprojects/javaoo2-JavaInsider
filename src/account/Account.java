@@ -4,7 +4,18 @@ package account;
 public class Account {
     private String owner;
     private String number;
-    protected double balance; // alterado para permitir o acesso pela subclasse
+    protected double balance;
+
+     public Account(){ // esse é o construtor padrão do Java quando não é explícito na classe nenhum outro
+        super();
+    }
+
+    // se apagar o constutor padrão acima e manter apenas este o construtor
+    // haverá erro na subclasse pois não haverá o construtor vazio
+    // a partir do momento que um construtor é definido o Java não gera mais automaticamente.
+    public Account(String number){
+        this.number = number;
+    }
 
     public String getOwner() {
         return owner;
@@ -30,7 +41,7 @@ public class Account {
         this.balance = balance;
     }
 
-    public void print(){ // alterado para fazer um mix das opções na subclasse
+    public void print(){
         System.out.println("Owner: " + owner);
         System.out.println("Number: " + number);
         System.out.println("Balance: " + balance);
