@@ -30,7 +30,11 @@ public class Account {
         this.balance = balance;
     }
 
-    public void print(){
-        System.out.println("Account{" + "owner='" +  owner + '\'' + ", number='" + number + '\'' + ", balance=" + balance + '}');
+    public void print(){ // alterado para fazer um mix das opções na subclasse
+        System.out.println("Owner: " + owner);
+        System.out.println("Number: " + number);
+        System.out.println("Balance: " + balance);
+
+
     }
 }
