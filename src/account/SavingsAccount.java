@@ -12,4 +12,8 @@ public class SavingsAccount extends Account {
         this.rate = rate;
     }
 
+    @Override
+    public void setBalance(double balance) { // sobrescrita de setBalance da superclasse na subclasse
+        this.balance = balance * rate; // com isso ao retornar o saldo vai aplicar a taxa de rendimento da pupoança
+    }
 }
