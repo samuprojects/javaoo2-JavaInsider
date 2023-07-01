@@ -6,13 +6,10 @@ public class Account {
     private String number;
     protected double balance;
 
-     public Account(){ // esse é o construtor padrão do Java quando não é explícito na classe nenhum outro
+     public Account(){
         super();
     }
 
-    // se apagar o constutor padrão acima e manter apenas este o construtor
-    // haverá erro na subclasse pois não haverá o construtor vazio
-    // a partir do momento que um construtor é definido o Java não gera mais automaticamente.
     public Account(String number){
         this.number = number;
     }
@@ -45,7 +42,14 @@ public class Account {
         System.out.println("Owner: " + owner);
         System.out.println("Number: " + number);
         System.out.println("Balance: " + balance);
+    }
 
-
+    @Override
+    public String toString() { // método sobrescrito da classe Object utilizado na aplicação para imprimir o objeto
+        return "Account{" +
+                "owner='" + owner + '\'' +
+                ", number='" + number + '\'' +
+                ", balance=" + balance +
+                '}';
     }
 }

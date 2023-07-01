@@ -4,15 +4,12 @@ package account;
 public class SavingsAccount extends Account {
     private double rate;
 
-     public SavingsAccount (){ // construtor padrão da subclasse que sempre chama o super para o nível acima
-         //é opcional escrever o super quando não há parametros, porém, se escrito deve ser antes de qualquer outra instrução
-         //System.out.println(); Se descomentar essa linha cairá no erro Call to 'super()' must be first statement in constructor body
-
+     public SavingsAccount (){
         super();
     }
 
     public SavingsAccount(String number){
-        super(number); // novo construtor da superclasse e passando um parametro fixo 1234 para a subclasse
+        super(number);
         rate = 1;
     }
 
