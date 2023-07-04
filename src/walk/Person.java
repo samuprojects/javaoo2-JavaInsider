@@ -1,8 +1,7 @@
 package walk;
 
 @SuppressWarnings("ALL")
-public class Person implements Walkable, Jumpable { // uma classe pode implementar várias interfaces
-    // diferente da classe que só pode estender de uma superclasse no quesito herança.
+public class Person implements Walkable, Jumpable {
 
     private int steps;
     private int distancePerStep;
