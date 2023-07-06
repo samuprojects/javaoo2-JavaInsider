@@ -1,9 +1,6 @@
 package pet;
 @SuppressWarnings("ALL")
 
-// não faz sentido instanciar objetos Pet porque essa classe foi criada para colocar atributos e métodos comuns a vários animais
-// por isso criar objetos Pet como em App6 deve ser abolido transformando a superclasse Pet em abstrata
-// ou seja não será mais possível instanciar objetos dessa classe e o código foi comentado em App6 por causa do compílador
 public abstract class Pet {
     private String color;
     private int amountEaten;
@@ -23,4 +20,9 @@ public abstract class Pet {
     public int getAmountEaten() {
         return amountEaten;
     }
+
+    // com a mudança da classe Pet para abstract podemos utilizar métodos abstratos
+    // esses métodos tem comportamento semelhante aos métodos da Interface contendo apenas a assinatura
+    // e nas subclasses eles serão obrigatórios de implementar e sobrescritos conforme cada animal
+    public abstract void sleep(int time);
 }

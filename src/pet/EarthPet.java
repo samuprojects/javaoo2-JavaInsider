@@ -1,15 +1,14 @@
 package pet;
 
-public class EarthPet extends Pet {
+public abstract class EarthPet extends Pet { // Assim como em Pet não faz sentido instanciar EarthPet por isso abstract
 
     public void walk(){
         System.out.println("EarthPet walk");
 
     }
 
-    public void talk(){ // se acrescentar o modificador final em métodos não poderá ser sobrescrever em subclasses
+    public void talk(){
         System.out.println("EarthPet talk");
-        // as situações para uso do final são raras e via de regra não é usado para restrição
 
     }
 }
