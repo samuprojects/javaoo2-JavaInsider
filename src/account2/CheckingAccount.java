@@ -6,7 +6,7 @@ public class CheckingAccount extends Account {
     private double rate;
 
     CheckingAccount(double rate) {
-        super(0);
+        super(100);
         this.rate = rate;
     }
 
