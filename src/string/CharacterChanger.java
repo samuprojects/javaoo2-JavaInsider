@@ -2,8 +2,15 @@ package string;
 
 public interface CharacterChanger {
 
-    // Criado o problema do Diamond por causa da ambiguidade com o método da outra interface
-    default String upper(String s) { // para resolver basta sobrescrever o método conforme realizado na outra interface
-        return "*" + s.substring(1);
+    // com a implementação dos default methods agora também é possivel criar métodos utilizando private e static
+    default String upper(String s) {
+        return getChar() + s.substring(1);
     }
+
+    // porém a visibilidade private só pode ser chamada dentro da interface conforme alteração a seguir
+    private char getChar(){
+        return '*';
+    }
+
+
 }
