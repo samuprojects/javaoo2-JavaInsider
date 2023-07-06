@@ -22,7 +22,7 @@ public class App3 {
         a.setBalance(1000);
         //System.out.println(a.toString());
         // Podemos usar no intellij o ALT + Insert para criar o toString na forma dos seus atributos de forma automática
-        // Conforme foi definido em Account
+        // Conforme foi definido em account2.Account
         System.out.println(a);
 
 

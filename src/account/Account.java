@@ -46,7 +46,7 @@ public class Account {
 
     @Override
     public String toString() { // método sobrescrito da classe Object utilizado na aplicação para imprimir o objeto
-        return "Account{" +
+        return "account2.Account{" +
                 "owner='" + owner + '\'' +
                 ", number='" + number + '\'' +
                 ", balance=" + balance +
