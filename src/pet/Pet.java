@@ -1,11 +1,12 @@
 package pet;
 @SuppressWarnings("ALL")
-public class Pet { // se acrescentar o modificador final em classes não poderá ser extendida em subclasses
+
+// não faz sentido instanciar objetos Pet porque essa classe foi criada para colocar atributos e métodos comuns a vários animais
+// por isso criar objetos Pet como em App6 deve ser abolido transformando a superclasse Pet em abstrata
+// ou seja não será mais possível instanciar objetos dessa classe e o código foi comentado em App6 por causa do compílador
+public abstract class Pet {
     private String color;
-    // as situações para uso do final são raras e via de regra não é usado para restrição
-    // ficar atento para situações específicas com o conceito, por exemplo, de sobrescrever uma classe
-    // que no caso da classe String do Java, ver documentação, é definida como final e tem um corportamento bem específico
-    // por isso não pode herdar de String
+    private int amountEaten;
 
     public String getColor(){
         return color;
@@ -13,5 +14,13 @@ public class Pet { // se acrescentar o modificador final em classes não poderá
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public void feed(int amount) {
+        amountEaten += amount;
+    }
+
+    public int getAmountEaten() {
+        return amountEaten;
     }
 }
