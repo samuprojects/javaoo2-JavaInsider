@@ -19,5 +19,11 @@ public class App11 {
         // Num record o Java considera os dados para verificar se os objetos são iguais, se mudar a idade por exemplo
         // o resultado será outro (false, pois não serão mais iguais)
 
+        // exemplo de erro aplicado pela validação do construtor, descomentar para teste
+        //PersonRecord personRecord3 = new PersonRecord(null, "Silva", 30);
+
+        PersonRecord personRecord3 = new PersonRecord("José", "Silva");
+        System.out.println(personRecord3);
+
     }
 }
