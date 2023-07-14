@@ -4,18 +4,27 @@ import java.util.Objects;
 
 public record PersonRecord (String firstName, String lastName, int age){
 
-    public PersonRecord { // o records permite criar algumas validações para os contrutores automáticos
-        // nesse caso abre um bloco de código e digita validações simples para que sejam criados objetos consistentes
+    // dentro de um record podemos criar atributos estáticos (ou seja, que não tem a ver com a instância)
+    private static final int DEFAULT_AGE = 0; // pode usar o default_age no lugar do zero caso não seja informado nada
+
+
+    public PersonRecord {
         Objects.requireNonNull(firstName);
         Objects.requireNonNull(lastName);
     }
 
-    // para criar outros construtores usando records é necessário delegar a chamada para o anterior
-    // isso ocorre porque o construtor que recebe todos os parametros sempre vai existir
-    // no exemplo a seguir não tem o age porém ele é chamado para satisfazer a condição de delegação do primeiro
-    public PersonRecord(String firstName, String lastName) {
-        this(firstName,lastName, 0);
-        System.out.println("Person record created"); // na aplicação além desse novo construtor já vai criar o objeto automaticamente
+        public PersonRecord(String firstName, String lastName) {
+        this(firstName,lastName, DEFAULT_AGE);
+        System.out.println("Person record created");
+    }
+
+    public String fullName() { // podemos criar métodos em records
+        return firstName + " " + lastName;
+    }
+
+    public static PersonRecord create(String name) { // podemos criar métodos estáticos em records
+        return new PersonRecord(name, ""); // aqui cria um novo objeto passando apenas o nome, o sobrenome vazio e age assume o default...
+
     }
 
 }
